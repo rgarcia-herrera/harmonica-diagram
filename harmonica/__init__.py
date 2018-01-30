@@ -1,7 +1,7 @@
 from jinja2 import Environment, PackageLoader
 import tunings
 import layouts
-
+import scales
 
 env = Environment(
     loader=PackageLoader('harmonica')
@@ -24,3 +24,8 @@ class Harp:
     def draw(self, path):
         with open(path, 'w') as out:
             out.write(self.template.render(self.notes))
+
+    def mark_in_scale(self, scale):
+        for note in self.notes:
+            if self.notes[note][:-1] in scale:
+                self.notes[note] = "(%s)" % self.notes[note]
