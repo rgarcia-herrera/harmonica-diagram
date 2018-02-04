@@ -1,5 +1,11 @@
 # Harmonica Diagram generator
 
+I wanted to see which notes are available on an instrument, and which
+of those belong to a scale.
+
+
+## Arabic scales on Harmonic Minor harmonicas
+
 I happen to own some [Lee Oskar harmonicas of the kind that are tuned to harmonic minor scales](http://leeoskar.com/harmonic-minor-harmonica/). ¡They are lots of fun!
 
 Playing them by ear I mostly improvise tunes that sound like
@@ -31,3 +37,11 @@ This is the diagram for the D arabic scale on a harmonic minor D
 harmonica, notes in the scale shown in parentheses.
 
 <img src="arabic_Dhm_diagrams/arabic_D4_Dhm_harp.png">
+
+
+## How to run it
+
+Take a look at [match.py](match.py). That script creates diagram
+for [every arabic scale](arabic_Dhm_diagrams) in the harmonic minor D
+harmonica. I just use a SVG file as a Jinja2 template, and some
+tedious array wrangling to shift/transpose scales.
