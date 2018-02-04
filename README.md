@@ -2,12 +2,13 @@
 
 I happen to own some [Lee Oskar harmonicas of the kind that are tuned to harmonic minor scales](http://leeoskar.com/harmonic-minor-harmonica/). ¡They are lots of fun!
 
-Playing them by ear I mostly improvise tunes that sound like tango.
+Playing them by ear I mostly improvise tunes that sound like
+tango. However these harmonicas are supposed to make it easy to play
+Middle Eastern music.
 
-These harmonicas are supposed to make it easy to play Middle Eastern
-music.
-
-But which arabic scale matches best with my harmonic minor D harmonica?
+But which arabic scale matches best with my harmonic minor D
+harmonica? The following table shows which scale shares the most notes
+with the harmonic minor D layout.
 
 |key  | jaccard index  |
 |-----|----------------|
@@ -26,6 +27,7 @@ But which arabic scale matches best with my harmonic minor D harmonica?
 
 Well, it seems the arabic in D matches best, duh.
 
-This is the diagram, notes in the arabic scale in parentheses.
+This is the diagram for the D arabic scale on a harmonic minor D
+harmonica, notes in the scale shown in parentheses.
 
 <img src="arabic_D4_Dhm_harp.png">
