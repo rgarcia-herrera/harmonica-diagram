@@ -1,7 +1,6 @@
 from jinja2 import Environment, PackageLoader
 import tunings
 import layouts
-import scales
 
 env = Environment(
     loader=PackageLoader('harmonica')
@@ -13,10 +12,10 @@ class Harp:
     def __init__(self, key="C4"):
         self.key = key
 
-        interval_size = tunings.distance('C4', self.key)
+        transport_interval_size = tunings.distance('C4', self.key)
 
         self.notes = {n: tunings.notes[tunings.notes.index(n)
-                                       + interval_size]
+                                       + transport_interval_size]
                       for n in layouts.harmonic_minor_C}
 
         self.template = env.get_template('harmonic_minor_C.svg')
@@ -27,5 +26,5 @@ class Harp:
 
     def mark_in_scale(self, scale):
         for note in self.notes:
-            if self.notes[note][:-1] in scale:
+            if self.notes[note] in scale:
                 self.notes[note] = "(%s)" % self.notes[note]

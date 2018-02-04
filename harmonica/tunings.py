@@ -14,11 +14,9 @@ note_symbol = ['C', 'Db',
                'Bb', 'B', 'C']
 
 notes = []
-nota = 0
 for o in range(-2, 9):
     for n in range(0, 12):
         notes.append("%s%s" % (note_symbol[n], o))
-        nota += 1
 
 
 def transpose(note, interval):

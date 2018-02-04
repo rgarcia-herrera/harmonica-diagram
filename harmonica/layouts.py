@@ -1,3 +1,8 @@
+"""
+Harmonica layouts tuned to harmonic minor scales
+"""
+import tunings as tn
+
 harmonic_minor_C = [
         'C4',
         'Db4',
@@ -27,3 +32,7 @@ harmonic_minor_C = [
         'G6',
         'Ab6',
         'C7']
+
+harmonic_minors = {harmonic_minor_C[t]: [tn.transpose(note, t)
+                                         for note in harmonic_minor_C]
+                   for t in range(12)}
