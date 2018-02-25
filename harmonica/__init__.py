@@ -9,16 +9,16 @@ env = Environment(
 
 class Harp:
 
-    def __init__(self, key="C4"):
+    def __init__(self, key="C4", layout="major_diatonic"):
         self.key = key
 
         transport_interval_size = tunings.distance('C4', self.key)
 
         self.notes = {n: tunings.notes[tunings.notes.index(n)
                                        + transport_interval_size]
-                      for n in layouts.harmonic_minor_C}
+                      for n in layouts.harmonicas[layout][key]}
 
-        self.template = env.get_template('harmonic_minor_C.svg')
+        self.template = env.get_template('%s_C.svg' % layout)
 
     def draw(self, path):
         with open(path, 'w') as out:

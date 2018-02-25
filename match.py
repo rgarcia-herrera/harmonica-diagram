@@ -1,4 +1,4 @@
-from harmonica import layouts
+from harmonica.layouts import harmonicas
 from harmonica import scales
 import harmonica
 
@@ -10,8 +10,11 @@ def jaccard_index(first, *others):
 
 
 for grade in scales.arabic_harmonicas:
-    print 'D4', grade, jaccard_index(set(layouts.harmonic_minors['D4']),
+    print 'C4', grade, jaccard_index(set(harmonicas['major_diatonic']['C4']),
                                      set(scales.arabic_harmonicas[grade]))
-    h = harmonica.Harp('D4')
+
+    h = harmonica.Harp(key='C4', layout='major_diatonic')
+
     h.mark_in_scale(scales.arabic_harmonicas[grade])
-    h.draw('arabic_%s_Dhm_harp.svg' % grade)
+
+    h.draw('arabic_%s_major_diatonic_harp.svg' % grade)

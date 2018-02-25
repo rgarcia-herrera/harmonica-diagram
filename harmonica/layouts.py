@@ -43,13 +43,8 @@ major_diatonic_C = [
 
     'Bb6',
     'B6',
-    'C7'
+    'C7',
     'A6']
-
-major_diatonics = {major_diatonic_C[t]: [tn.transpose(note, t)
-                                         for note in major_diatonic_C]
-                   for t in range(12)}
-
 
 harmonic_minor_C = [
         'C4',
@@ -81,6 +76,12 @@ harmonic_minor_C = [
         'Ab6',
         'C7']
 
-harmonic_minors = {harmonic_minor_C[t]: [tn.transpose(note, t)
-                                         for note in harmonic_minor_C]
-                   for t in range(12)}
+
+harmonicas = {
+    'major_diatonic': {major_diatonic_C[t]: [tn.transpose(note, t)
+                                             for note in major_diatonic_C]
+                       for t in range(12)},
+    'harmonic_minor': {harmonic_minor_C[t]: [tn.transpose(note, t)
+                                             for note in harmonic_minor_C]
+                       for t in range(12)}
+    }
