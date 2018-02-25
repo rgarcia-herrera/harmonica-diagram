@@ -13,15 +13,15 @@ note_symbol = ['C', 'Db',
                'Ab', 'A',
                'Bb', 'B', 'C']
 
-notes = []
+all_notes = []
 for o in range(-2, 9):
     for n in range(0, 12):
-        notes.append("%s%s" % (note_symbol[n], o))
+        all_notes.append("%s%s" % (note_symbol[n], o))
 
 
 def transpose(note, interval):
-    return notes[notes.index(note) + interval]
+    return all_notes[all_notes.index(note) + interval]
 
 
 def distance(n1, n2):
-    return notes.index(n2) - notes.index(n1)
+    return all_notes.index(n2) - all_notes.index(n1)

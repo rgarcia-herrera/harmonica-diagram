@@ -14,8 +14,8 @@ class Harp:
 
         transport_interval_size = tunings.distance('C4', self.key)
 
-        self.notes = {n: tunings.notes[tunings.notes.index(n)
-                                       + transport_interval_size]
+        self.notes = {n: tunings.all_notes[tunings.all_notes.index(n)
+                                           + transport_interval_size]
                       for n in layouts.harmonicas[layout][key]}
 
         self.template = env.get_template('%s_C.svg' % layout)
