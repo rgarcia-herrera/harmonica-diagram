@@ -2,6 +2,7 @@
 Harmonica layouts tuned to harmonic minor scales
 """
 import tunings as tn
+import scales
 
 major_diatonic_C = [
     'C4',
@@ -78,10 +79,12 @@ harmonic_minor_C = [
 
 
 harmonicas = {
-    'major_diatonic': {major_diatonic_C[t]: [tn.transpose(note, t)
-                                             for note in major_diatonic_C]
-                       for t in range(12)},
-    'harmonic_minor': {harmonic_minor_C[t]: [tn.transpose(note, t)
-                                             for note in harmonic_minor_C]
-                       for t in range(12)}
-    }
+    'major_diatonic': {
+        scales.chromatic4[t]: {"n%s" % n: tn.transpose(major_diatonic_C[n], t)
+                               for n in range(len(major_diatonic_C))}
+        for t in range(12)},
+    'harmonic_minor': {
+        scales.chromatic4[t]: {"n%s" % n: tn.transpose(harmonic_minor_C[n], t)
+                               for n in range(len(harmonic_minor_C))}
+        for t in range(12)}
+}

@@ -9,12 +9,27 @@ def jaccard_index(first, *others):
         / float(len(first.union(*others)))
 
 
-for grade in scales.arabic_harmonicas:
-    print 'C4', grade, jaccard_index(set(harmonicas['major_diatonic']['C4']),
-                                     set(scales.arabic_harmonicas[grade]))
+harmonic_minor_harps = ['G4', 'Ab4', 'A4',
+                        'Bb4', 'C4', 'Db4',
+                        'D4', 'Eb4', 'E4',
+                        'F4', 'Gb4']
 
-    h = harmonica.Harp(key='C4', layout='major_diatonic')
+major_diatonics = ['G4', 'Ab4', 'A4',
+                   'Bb4', 'B4', 'C4', 'Db4',
+                   'D4', 'Eb4', 'E4', 'F4',
+                   'Gb4']
 
-    h.mark_in_scale(scales.arabic_harmonicas[grade])
+for grade_harp in major_diatonics:
+    for grade_scale in scales.chromatic4:
+        print grade_harp, grade_scale,\
+            jaccard_index(
+                set(harmonicas['major_diatonic'][grade_harp].values()),
+                set(scales.blues_harmonicas[grade_scale]))
 
-    h.draw('arabic_%s_major_diatonic_harp.svg' % grade)
+        h = harmonica.Harp(key=grade_harp, layout='major_diatonic')
+
+        h.mark_in_scale(scales.blues_harmonicas[grade_scale])
+
+        h.draw('diagrams/%s_blues_in_major_diatonic_%s_harp.svg'
+               % (grade_scale,
+                  grade_harp))

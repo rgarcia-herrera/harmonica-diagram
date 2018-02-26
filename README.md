@@ -36,7 +36,7 @@ Well, it seems the arabic in D matches best, duh.
 This is the diagram for the D arabic scale on a harmonic minor D
 harmonica, notes in the scale shown in parentheses.
 
-<img src="arabic_Dhm_diagrams/arabic_D4_Dhm_harp.png">
+<img src="diagrams/arabic_D4_Dhm_harp.png">
 
 
 ## How to run it
